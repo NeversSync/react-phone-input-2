@@ -944,7 +944,6 @@ class PhoneInput extends React.Component {
           className={flagViewClasses}
           style={this.props.buttonStyle}
           ref={el => this.dropdownContainerRef = el}
-          aria-label="Country code dropdown"
         >
           {renderStringAsFlag ?
           <div className={selectedFlagClasses}>{renderStringAsFlag}</div>
@@ -957,6 +956,7 @@ class PhoneInput extends React.Component {
             role='button'
             aria-haspopup="listbox"
             aria-expanded={showDropdown ? true : undefined}
+            aria-label="Country code dropdown"
           >
             <div className={inputFlagClasses}>
               {!disableDropdown && <div className={arrowClasses}></div>}
