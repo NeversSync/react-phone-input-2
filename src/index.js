@@ -940,28 +940,11 @@ class PhoneInput extends React.Component {
         onKeyDown={this.handleKeydown}>
         {specialLabel && <div className='special-label'>{specialLabel}</div>}
         {errorMessage && <div className='invalid-number-message'>{errorMessage}</div>}
-        <input
-          className={inputClasses}
-          style={this.props.inputStyle}
-          onChange={this.handleInput}
-          onClick={this.handleInputClick}
-          onDoubleClick={this.handleDoubleClick}
-          onFocus={this.handleInputFocus}
-          onBlur={this.handleInputBlur}
-          onCopy={this.handleInputCopy}
-          value={formattedNumber}
-          ref={el => this.numberInputRef = el}
-          onKeyDown={this.handleInputKeyDown}
-          placeholder={this.props.placeholder}
-          disabled={this.props.disabled}
-          type='tel'
-          {...this.props.inputProps}
-        />
-
         <div
           className={flagViewClasses}
           style={this.props.buttonStyle}
           ref={el => this.dropdownContainerRef = el}
+          aria-label="Country code dropdown"
         >
           {renderStringAsFlag ?
           <div className={selectedFlagClasses}>{renderStringAsFlag}</div>
@@ -982,6 +965,25 @@ class PhoneInput extends React.Component {
 
           {showDropdown && this.getCountryDropdownList()}
         </div>
+        <input
+          className={inputClasses}
+          style={this.props.inputStyle}
+          onChange={this.handleInput}
+          onClick={this.handleInputClick}
+          onDoubleClick={this.handleDoubleClick}
+          onFocus={this.handleInputFocus}
+          onBlur={this.handleInputBlur}
+          onCopy={this.handleInputCopy}
+          value={formattedNumber}
+          ref={el => this.numberInputRef = el}
+          onKeyDown={this.handleInputKeyDown}
+          placeholder={this.props.placeholder}
+          disabled={this.props.disabled}
+          type='tel'
+          {...this.props.inputProps}
+        />
+
+
       </div>
     );
   }
