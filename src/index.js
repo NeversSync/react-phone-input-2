@@ -956,9 +956,8 @@ class PhoneInput extends React.Component {
             role='button'
             aria-haspopup="listbox"
             aria-expanded={showDropdown ? true : undefined}
-            aria-label="Country code dropdown"
           >
-            <div className={inputFlagClasses}>
+            <div className={inputFlagClasses} aria-label="Country code">
               {!disableDropdown && <div className={arrowClasses}></div>}
             </div>
           </div>}
