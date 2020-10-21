@@ -931,6 +931,7 @@ class PhoneInput extends React.Component {
       'invalid-number': !isValidValue,
       'open': showDropdown,
     });
+
     const inputFlagClasses = selectedCountry ? `flag ${selectedCountry && selectedCountry.iso2}` : `flag us`;
 
     return (
