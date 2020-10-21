@@ -931,7 +931,7 @@ class PhoneInput extends React.Component {
       'invalid-number': !isValidValue,
       'open': showDropdown,
     });
-    const inputFlagClasses = `flag ${selectedCountry && selectedCountry.iso2}`;
+    const inputFlagClasses = selectedCountry ? `flag ${selectedCountry && selectedCountry.iso2}` : `flag us`;
 
     return (
       <div
@@ -958,7 +958,8 @@ class PhoneInput extends React.Component {
             aria-expanded={showDropdown ? true : undefined}
             aria-label="Country code"
           >
-            <div className={inputFlagClasses} >
+            {/* <div className={inputFlagClasses} > */}
+            <div className={`us ${inputFlagClasses}`} >
               {!disableDropdown && <div className={arrowClasses}></div>}
             </div>
           </div>}
