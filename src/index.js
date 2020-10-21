@@ -958,8 +958,7 @@ class PhoneInput extends React.Component {
             aria-expanded={showDropdown ? true : undefined}
             aria-label="Country code"
           >
-            {/* <div className={inputFlagClasses} > */}
-            <div className={`us ${inputFlagClasses}`} >
+            <div className={inputFlagClasses} >
               {!disableDropdown && <div className={arrowClasses}></div>}
             </div>
           </div>}
