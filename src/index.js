@@ -203,14 +203,6 @@ class PhoneInput extends React.Component {
     ) ? countryGuess.dialCode : '';
 
     let formattedNumber;
-    let testFormattedNumber;
-    testFormattedNumber = (inputNumber === '' && countryGuess === 0) ? '' :
-    this.formatNumber(
-      (props.disableCountryCode ? '' : '') + inputNumber,
-      countryGuess.name ? countryGuess : undefined
-    );
-    console.log('testforamtted', testFormattedNumber)
-
     formattedNumber = (inputNumber === '' && countryGuess === 0) ? '' :
     this.formatNumber(
       (props.disableCountryCode ? '' : dialCode) + inputNumber,
@@ -941,13 +933,6 @@ class PhoneInput extends React.Component {
     });
 
     const inputFlagClasses = selectedCountry ? `flag ${selectedCountry && selectedCountry.iso2}` : `flag us`;
-    // const hiddenCountryFormattedNumber = selectedCountry.dialCode === "+1" ? selectedCountry.dialCode : formattedNumber
-    const hiddenCountryFormattedNumber = `${selectedCountry.dialCode} country ${testFormattedNumber}`
-
-    console.log('formatted num in package', formattedNumber)
-    console.log('hiddenformatted in package', hiddenCountryFormattedNumber)
-    console.log('selected country in package', selectedCountry)
-
 
     return (
       <div
@@ -990,8 +975,7 @@ class PhoneInput extends React.Component {
           onFocus={this.handleInputFocus}
           onBlur={this.handleInputBlur}
           onCopy={this.handleInputCopy}
-          // value={formattedNumber}
-          value={hiddenCountryFormattedNumber}
+          value={formattedNumber}
           ref={el => this.numberInputRef = el}
           onKeyDown={this.handleInputKeyDown}
           placeholder={this.props.placeholder}
