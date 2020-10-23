@@ -845,10 +845,6 @@ class PhoneInput extends React.Component {
       'hide': !showDropdown
     });
 
-    export const finalStateSelectedCountry = this.state.selectedCountry
-    export const finalSelectedCountry = selectedCountry
-
-
     return (
       <ul
         ref={el => {
