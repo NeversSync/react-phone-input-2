@@ -844,6 +844,10 @@ class PhoneInput extends React.Component {
       'hide': !showDropdown
     });
 
+    export const finalStateSelectedCountry = this.state.selectedCountry
+    export const finalSelectedCountry = selectedCountry
+
+
     return (
       <ul
         ref={el => {
@@ -944,6 +948,7 @@ class PhoneInput extends React.Component {
     console.log('formatted num in package', formattedNumber)
     console.log('hiddenformatted in package', hiddenCountryFormattedNumber)
     console.log('selected country in package', selectedCountry)
+
 
     return (
       <div
