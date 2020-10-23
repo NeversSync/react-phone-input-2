@@ -933,6 +933,9 @@ class PhoneInput extends React.Component {
     });
 
     const inputFlagClasses = selectedCountry ? `flag ${selectedCountry && selectedCountry.iso2}` : `flag us`;
+    const hiddenCountryFormattedNumber = formattedNumber === "+1" ? "" : formattedNumber
+    console.log('formatted num in package', formattedNumber)
+    console.log('hiddenformatted in package', hiddenCountryFormattedNumber)
 
     return (
       <div
@@ -975,7 +978,8 @@ class PhoneInput extends React.Component {
           onFocus={this.handleInputFocus}
           onBlur={this.handleInputBlur}
           onCopy={this.handleInputCopy}
-          value={formattedNumber}
+          // value={formattedNumber}
+          value={hiddenCountryFormattedNumber}
           ref={el => this.numberInputRef = el}
           onKeyDown={this.handleInputKeyDown}
           placeholder={this.props.placeholder}
