@@ -209,6 +209,7 @@ class PhoneInput extends React.Component {
       (props.disableCountryCode ? '' : '') + inputNumber,
       countryGuess.name ? countryGuess : undefined
     );
+    console.log('testforamtted', testFormattedNumber)
     formattedNumber = (inputNumber === '' && countryGuess === 0) ? '' :
     this.formatNumber(
       (props.disableCountryCode ? '' : dialCode) + inputNumber,
@@ -992,7 +993,6 @@ class PhoneInput extends React.Component {
           placeholder={this.props.placeholder}
           disabled={this.props.disabled}
           type='tel'
-          selectedCountry={selectedCountry}
           {...this.props.inputProps}
         />
 
