@@ -942,7 +942,7 @@ class PhoneInput extends React.Component {
 
     const inputFlagClasses = selectedCountry ? `flag ${selectedCountry && selectedCountry.iso2}` : `flag us`;
     // const hiddenCountryFormattedNumber = selectedCountry.dialCode === "+1" ? selectedCountry.dialCode : formattedNumber
-    const hiddenCountryFormattedNumber = `${selectedCountry.dialCode} country ${formattedNumber}`
+    const hiddenCountryFormattedNumber = `${selectedCountry.dialCode} country ${testFormattedNumber}`
 
     console.log('formatted num in package', formattedNumber)
     console.log('hiddenformatted in package', hiddenCountryFormattedNumber)
